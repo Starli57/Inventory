@@ -3,49 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using Inventory;
 
-public class ItemsData : ScriptableObject
+namespace Utils
 {
-    public List<InventoryItem> itemsData = new List<InventoryItem>();
-
-    public static ItemsData instance
+    public class ItemsData : ScriptableObject
     {
-        get
+        public List<InventoryItem> itemsData = new List<InventoryItem>();
+
+        public static ItemsData instance
         {
-            if (_instance == null)
+            get
             {
-                _instance = Resources.Load("ItemsData") as ItemsData;
+                if (_instance == null)
+                {
+                    _instance = Resources.Load("ItemsData") as ItemsData;
+                }
+
+                return _instance;
             }
-
-            return _instance;
         }
-    }
 
-    [ContextMenu("AddRandomItems")]
-    public void AddRandomItems()
-    {
-        const int itemsCount = 10;
-        int maxId = itemsData.Count > 0 ? itemsData.Max(x => x.id) : 0;
-
-        for (int i = 0; i < itemsCount; i++) 
+        [ContextMenu("AddRandomItems")]
+        public void AddRandomItems()
         {
-            InventoryItem newItem = new InventoryItem();
+            const int itemsCount = 10;
+            ulong maxId = itemsData.Count > 0 ? itemsData.Max(x => x.id) : 0;
 
-            int newId = maxId + 1;
-            maxId = newId;
+            for (int i = 0; i < itemsCount; i++)
+            {
+                InventoryItem newItem = new InventoryItem();
 
-            newItem.id = newId;
-            newItem.itemType = (InventoryItem.ItemsType)UnityEngine.Random.Range(0, 2);
+                ulong newId = maxId + 1;
+                maxId = newId;
 
-            newItem.attack = newItem.itemType == InventoryItem.ItemsType.weapon ? 
-                UnityEngine.Random.Range(0, 100) : 0;
+                newItem.id = newId;
+                newItem.itemType = (InventoryItem.ItemsType)UnityEngine.Random.Range(0, 2);
 
-            newItem.def = newItem.itemType == InventoryItem.ItemsType.armor ?
-                UnityEngine.Random.Range(0, 10) : 0;
+                newItem.attack = newItem.itemType == InventoryItem.ItemsType.weapon ?
+                    UnityEngine.Random.Range(0, 100) : 0;
 
-            itemsData.Add(newItem);
+                newItem.def = newItem.itemType == InventoryItem.ItemsType.armor ?
+                    UnityEngine.Random.Range(0, 10) : 0;
+
+                itemsData.Add(newItem);
+            }
         }
-    }
 
-    private static ItemsData _instance;
+        private static ItemsData _instance;
+    }
 }

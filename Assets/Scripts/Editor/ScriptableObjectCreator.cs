@@ -3,24 +3,27 @@ using System.Collections;
 using UnityEditor;
 using System.IO;
 
-public class ScriptableObjectCreator
+namespace Utils
 {
-
-    private const string _resourcesPath = "Assets/Resources";
-
-    [MenuItem("ScriptableObjects/Create items data")]
-    public static void CreateItemsData()
+    public class ScriptableObjectCreator
     {
-        ItemsData asset = ScriptableObject.CreateInstance<ItemsData>();
 
-        if (!Directory.Exists(_resourcesPath))
-            Directory.CreateDirectory(_resourcesPath);
+        private const string _resourcesPath = "Assets/Resources";
 
-        AssetDatabase.CreateAsset(asset, "Assets/Resources/ItemsData.asset");
-        AssetDatabase.SaveAssets();
+        [MenuItem("ScriptableObjects/Create items data")]
+        public static void CreateItemsData()
+        {
+            ItemsData asset = ScriptableObject.CreateInstance<ItemsData>();
 
-        EditorUtility.FocusProjectWindow();
+            if (!Directory.Exists(_resourcesPath))
+                Directory.CreateDirectory(_resourcesPath);
 
-        Selection.activeObject = asset;
+            AssetDatabase.CreateAsset(asset, "Assets/Resources/ItemsData.asset");
+            AssetDatabase.SaveAssets();
+
+            EditorUtility.FocusProjectWindow();
+
+            Selection.activeObject = asset;
+        }
     }
 }

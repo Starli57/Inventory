@@ -11,4 +11,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c78a985cb8e722448a20838a0c07c2c, type: 3}
   m_Name: ItemsData
   m_EditorClassIdentifier: 
-  itemsData: []
+  itemsData:
+  - id: 1
+    itemType: 0
+    attack: 65
+    def: 0
+    sprite: {fileID: 21300000, guid: f8a0997c30b33fd42998800317e977d3, type: 3}
+  - id: 2
+    itemType: 0
+    attack: 1
+    def: 0
+    sprite: {fileID: 21300000, guid: e30eb9c3272550d49acfb818d86bd67b, type: 3}
+  - id: 3
+    itemType: 1
+    attack: 0
+    def: 5
+    sprite: {fileID: 21300000, guid: 0010e352a9b1abc4ebab3f3235c95e0b, type: 3}
+  - id: 4
+    itemType: 0
+    attack: 6
+    def: 0
+    sprite: {fileID: 21300000, guid: e6b241e893089a444ada2b7be8ed5f7b, type: 3}
+  - id: 5
+    itemType: 1
+    attack: 0
+    def: 6
+    sprite: {fileID: 21300000, guid: fc6468be32c0f5449bef5dee3059a6f6, type: 3}
+  - id: 6
+    itemType: 0
+    attack: 68
+    def: 0
+    sprite: {fileID: 21300000, guid: f1ec4da94f3fce84887017bd602a7b98, type: 3}
+  - id: 7
+    itemType: 0
+    attack: 23
+    def: 0
+    sprite: {fileID: 21300000, guid: 3d5de3033771a224ba4f9b2409012617, type: 3}
+  - id: 8
+    itemType: 0
+    attack: 35
+    def: 0
+    sprite: {fileID: 21300000, guid: 28a02df1369b7fd4eab040459b0cc450, type: 3}
+  - id: 9
+    itemType: 1
+    attack: 0
+    def: 9
+    sprite: {fileID: 21300000, guid: 7cdfac7a7246d274c8b983fd664158c9, type: 3}
+  - id: 10
+    itemType: 0
+    attack: 62
+    def: 0
+    sprite: {fileID: 21300000, guid: e977c1562987f7e41b442f92c93f4234, type: 3}

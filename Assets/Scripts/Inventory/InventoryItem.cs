@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
-public class InventoryItem
+namespace Inventory
 {
-    public enum ItemsType { weapon = 0, armor = 1}
+    [Serializable]
+    public class InventoryItem
+    {
+        public enum ItemsType { weapon = 0, armor = 1 }
 
-    public int id;
+        public ulong id;
 
-    public ItemsType itemType;
+        public ItemsType itemType;
 
-    public int attack;
-    public int def;
+        public int attack;
+        public int def;
 
-    public Sprite sprite;
+        public Sprite sprite;
+    }
 }
