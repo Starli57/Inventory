@@ -21,8 +21,8 @@ namespace Inventory
 
         public void OnButtonPressed()
         {
-            if (onPressed != null && itemId > 0)
-                onPressed(itemId);
+            if (itemId > 0)
+                onPressed?.Invoke(itemId);
         }
 
         private Sprite _defaultSprite;
