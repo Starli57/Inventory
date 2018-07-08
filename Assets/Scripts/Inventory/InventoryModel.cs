@@ -6,6 +6,5 @@ namespace Inventory
 {
     public class InventoryModel
     {
-        public ulong bagSlotsCount = 20;
     }
 }

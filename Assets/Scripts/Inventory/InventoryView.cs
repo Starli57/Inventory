@@ -8,21 +8,16 @@ namespace Inventory
     {
         [SerializeField]
         private UserItemsView _userItemsView;
-
+        
         [SerializeField]
-        private BagView _bagView;
+        private StatsPrinter _statsPrinter;
 
-        [SerializeField]
-        private StatsView _statsView;
-
-        public void Initialize(InventoryItem userWeapon, InventoryItem userDefenseItem, 
-            ulong bagSlotsCount, List<InventoryItem> bagItems)
+        public void Initialize(InventoryItem userWeapon, InventoryItem userDefenseItem)
         {
             _userItemsView.Initialize(userWeapon, userDefenseItem);
-            _bagView.Initialize(bagSlotsCount, bagItems);
 
-            _statsView.UpdatePower(userWeapon.attack);
-            _statsView.UpdateDefense(userDefenseItem.def);
+            _statsPrinter.UpdatePower(userWeapon.attack);
+            _statsPrinter.UpdateDefense(userDefenseItem.def);
         }
     }
 }

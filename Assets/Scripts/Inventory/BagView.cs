@@ -12,17 +12,29 @@ namespace Inventory
         [SerializeField]
         private Transform _slotParent;
 
-        public void Initialize(ulong slotsCount, List<InventoryItem> items)
+        public void SetupDependenses(BagModel model)
+        {
+            _model = model;
+        }
+
+        public void Initialize(ulong slotsCount)
         {
             for (ulong i = 0; i < slotsCount; i++) 
             {
                 InventorySlot newSlot = Instantiate(_slotPrefab, _slotParent);
                 _freeSlots.Add(newSlot);
             }
-
-            foreach (var item in items)
-                FillFreeSlot(item);
         }
+
+        public void AddItems(List<InventoryItem> items)
+        {
+            foreach(var item in items)
+            {
+                FillFreeSlot(item);
+            }
+        }
+
+        private BagModel _model;
 
         private List<InventorySlot> _freeSlots = new List<InventorySlot>();
         private List<InventorySlot> _filledSlots = new List<InventorySlot>();
@@ -31,7 +43,7 @@ namespace Inventory
         {
             if (_freeSlots.Count == 0)
             {
-                Debug.LogError("Havent free slot");
+                Debug.LogError("[BagView] Havent free slot");
                 return false;
             }
 

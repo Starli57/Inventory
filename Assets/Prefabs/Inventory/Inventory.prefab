@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userItemsView: {fileID: 114443482173120094}
   _bagView: {fileID: 114889958448002524}
-  _statsView: {fileID: 114346163628513942}
+  _statsPrinter: {fileID: 114346163628513942}
 --- !u!114 &114271929536211676
 MonoBehaviour:
   m_ObjectHideFlags: 1

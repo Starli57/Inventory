@@ -6,7 +6,7 @@ using System;
 
 namespace Inventory
 {
-    public class StatsView : MonoBehaviour
+    public class StatsPrinter : MonoBehaviour
     {
         [SerializeField]
         private Text _powerText;
